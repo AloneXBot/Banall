@@ -1,14 +1,12 @@
 import os
+from os import getenv
 
 class Config:
-    BOT_TOKEN=os.environ['BOT_TOKEN']
-    SUDOS=os.environ['SUDOS']
-    TELEGRAM_APP_HASH=os.environ['TELEGRAM_APP_HASH']
-    TELEGRAM_APP_ID=int(os.environ['TELEGRAM_APP_ID'])
-    
-    if not TELEGRAM_TOKEN:
-        raise ValueError(' BOT TOKEN not set')
-    
+    TELEGRAM_TOKEN = getenv("TELEGRAM_TOKEN", None)
+    PYRO_SESSION = getenv("PYRO_SESSION", None)
+    TELEGRAM_APP_HASH= getenv('TELEGRAM_APP_HASH')
+    TELEGRAM_APP_ID=int(getenv('TELEGRAM_APP_ID'))
+        
     if not TELEGRAM_APP_HASH:
         raise ValueError("TELEGRAM_APP_HASH not set")
 
