@@ -1,49 +1,30 @@
 {
-    "name": "Ban All Bot",
-    "description": "https://telegra.ph/file/cd00fdd3b1c011eb92717.jpg",
+    "name": "Ban all",
+    "description": "help you to ban the all memebers from the group",
     "repository": "https://github.com/Xdarnav/Banall",
-    "logo": "",
-    "keywords": [
-        "python",
-        "telegram"
-    ],
-    "buildpacks": [{
-    "url": "heroku/python"
-  }],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "eco"
-        }
-     },
-       "addons": [
-      {
-         "options": {
-            "version": "12"
-         },
-         "plan": "heroku-postgresql"
-      }
-   ],
+    "image": "heroku/python",
     "env": {
-        "BOT_TOKEN": {
-            "description": "Your bot token",
-            "value": "",
-            "required": true
+        "TELEGRAM_TOKEN": {
+        "description": "Leave Blank If uh don't want in bot"
+        "required": false,
+        "value": "None"
         },
-        "API_ID": {
-            "description": "Get from https://my.telegram.org",
-            "value": "",
-            "required": true
+        "PYRO_SESSION": {
+        "description": "An Pyrogram old session if Uh Want To Use In Userbot"
+        "required": false,
+        "value": "None"
         },
-        "API_HASH": {
-            "description": "Get from https://my.telegram.org",
-            "value": "",
-            "required": true
+        "TELEGRAM_APP_HASH":{
+            "description": "Get this value from https://my.telegram.org"
         },
-        "SUDO": {
-            "description": "sudo ids here.",
-            "value": "",
-            "required": true
+        "TELEGRAM_APP_ID":{
+            "description": "Get this value from https://my.telegram.org"
         }
-    }
-}
+    },
+    "formation": {
+            "worker": {
+                "quantity": 1,
+                "size": "eco"
+            }
+        }
+  }
